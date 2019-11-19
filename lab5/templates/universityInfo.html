@@ -6,7 +6,15 @@
 </head>
 <body>
 <section>
-    <h2>Университет: {{ elem.name }}</h2>
+    <ul>
+        <li><b>Университет: </b>{{name}}</li>
+        <li><b>Ректор: </b>{{head.0}} {{head.1}}</li>
+        <li><b>Местопложение: </b>{{adress.index}}, {{adress.city}}, {{adress.adress}}</li>
+        <li><b>Кол-во административных подразделений: </b>{{ad_amount}}</li>
+        <li><b>Кол-во научно-образовательных подразделений:  </b>{{sc_amount}}</li>
+        <li><b>Кол-во мегафакультетов:  </b>{{mf_amount}}</li>
+        <li><b>Кол-во факультетов:  </b>{{dep_amount}}</li>
+    </ul>
 </section>
 </body>
 </html>
