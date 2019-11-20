@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<section>
+    <ul>
+        {% for dep in departaments %}
+        <li><b>ID: </b>{{dep.id}}</li>
+        <li><b>Факультет: </b>{{dep.name}}</li>
+        <li><b>Заведующий факультетом: </b>
+            {{dep.head.surname}}
+            {{dep.head.name}}
+            {{dep.head.middlename}}
+            {{dep.head.table_id}}</li>
+        <li><b>Преподователи: </b>
+        <ol>
+            {% for worker in dep.workers %}
+            <li>
+                {{worker.surname}}
+                {{worker.name}}
+                {{worker.middlename}}
+                ({{worker.table_id}}, {{worker.post}})
+            </li>
+            {% endfor %}
+        </ol>
+        </li>
+        <li><b>Образовательные программы:  </b>
+        <ul>
+            {% for edp in dep.educational_programs %}
+            <li>
+                {{ edp.id }}
+                ({{ edp.name}}, {{ edp.discipline }})
+            </li>
+            {%  endfor %}
+        </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+</body>
+</html>

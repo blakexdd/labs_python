@@ -62,6 +62,9 @@ with open("json_data.json", 'r') as read_file:
     # assigning group variable
     group = year_of_study['groups'][0]
 
+    # assigning departaments to variable
+    deps = data['scintific_and_educational'][0]['departments']
+
     # forming dictionary of parameters to give
     # it as third argument to render function
     # for ITMO page
@@ -86,6 +89,11 @@ with open("json_data.json", 'r') as read_file:
     # for group page
     dict_group = {'group': group}
 
+    # forming dictionary of parameters to give
+    # it as third argument to render function
+    # for departaments page
+    dict_deps = {'departaments': deps}
+
 
 # view function for making default page appearance
 def index(request):
@@ -106,3 +114,7 @@ def disc(request):
 # view function for making group info page
 def group(request):
     return render(request, 'groupsInfo.html', dict_group)
+
+# view function for making departamen info page
+def deps(request):
+    return render(request, 'departamentsInfo.html', dict_deps)
