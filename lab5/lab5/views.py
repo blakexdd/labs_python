@@ -44,14 +44,39 @@ with open("json_data.json", 'r') as read_file:
     for i in data['scintific_and_educational']:
         dep_amount += len(i['departments'])
 
+    # assigning id of educational programm
+    edp_id = data['scintific_and_educational'][0]['departments'][0]['educational_programs'][0]['id']
+
+    # assigning name of educational programm
+    edp_name = data['scintific_and_educational'][0]['departments'][0]['educational_programs'][0]['name']
+
+    # assigning name of discipline
+    dis_name = data['scintific_and_educational'][0]['departments'][0]['educational_programs'][0]['discipline']
+
+    #assigning year of study
+    year_of_study = data['scintific_and_educational'][0]['departments'][0]['educational_programs'][0]['year']
+
+    #assigning amount of groups
+    amount_of_groups = len(year_of_study['groups'])
+
     # forming dictionary of parameters to give
     # it as third argument to render function
-    dict = {'name': name, 'head': [head_name, head_surname],
+    # for ITMO page
+    dict_ITMO = {'name': name, 'head': [head_name, head_surname],
             'adress': {'index': index, 'city': city, 'adress': adress},
             'ad_amount': ad_amount,
             'sc_amount': sc_amount,
             'mf_amount': mf_amount,
             'dep_amount': dep_amount}
+
+    # forming dictionary of parameters to give
+    # it as third argument to render function
+    # for discipline page
+    dict_disc = {'edp_id': edp_id,
+                 'edp_name': edp_name,
+                 'dis_name': dis_name,
+                 'year_of_study': year_of_study,
+                 'amount_of_groups': amount_of_groups}
 
 
 # view function for making default page appearance
@@ -64,4 +89,8 @@ def indexRender(request):
 
 # view function for making ITMO page appearance
 def ITMO_University(request):
-    return render(request, 'universityInfo.html', dict)
+    return render(request, 'universityInfo.html', dict_ITMO)
+
+# view function for making disc page appearance
+def disc(request):
+    return render(request, 'disciplineInfo.html', dict_disc)

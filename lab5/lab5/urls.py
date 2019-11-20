@@ -23,4 +23,5 @@ urlpatterns = [
     re_path(r'^$', views.index, name='index'),
     re_path(r'^hello', views.indexRender, name='indexRender'),
     re_path(r"^ITMO", views.ITMO_University, name='ITMO'),
+    re_path(r'^discipline', views.disc, name='discipline')
 ]
