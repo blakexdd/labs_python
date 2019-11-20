@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import re_path
 from lab5 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path("ITMO", views.indexRender, name='indexRender'),
+    re_path(r'^$', views.index, name='index'),
+    re_path(r'^hello', views.indexRender, name='indexRender'),
+    re_path(r"^ITMO", views.ITMO_University, name='ITMO'),
 ]

@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b111ab4-381b-4989-bd04-89ba8d7b7f03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/labs_python.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/lab5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lab5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/json_data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab5/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab5/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/universityInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/universityInfo.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +31,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/json_data.json" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/lab5/views.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1TZ4RBLCNrFkQyCAy8yLLQB2AI5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -98,7 +93,8 @@
       <workItem from="1573654273842" duration="6209000" />
       <workItem from="1573978629281" duration="6321000" />
       <workItem from="1574176534169" duration="599000" />
-      <workItem from="1574195118712" duration="3884000" />
+      <workItem from="1574195118712" duration="4270000" />
+      <workItem from="1574249063318" duration="645000" />
     </task>
     <servers />
   </component>
@@ -110,7 +106,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
