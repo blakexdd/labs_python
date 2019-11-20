@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<section>
+    <style>
+        table
+        {
+            border: solid 1px black;
+        }
+
+        td, th
+        {
+            border: solid 1px black;
+        }
+    </style>
+    <table>
+        <tbody>
+        <tr>
+            <th>Группа</th>
+            <th>Табельный номер</th>
+            <th>Студент</th>
+            <th>Стипендия</th>
+        </tr>
+        <tr>
+            <td>{{ group.name }}</td>
+            <td>{{ group.students.table_id }}</td>
+            <td>{{ group.students.name }} {{ group.students.surname }} {{ group.students.middlename }}</td>
+            <td>{{ group.students.bursary }}</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+</body>
+</html>
