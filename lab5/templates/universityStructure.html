@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<section>
+    <ul>
+        <li><b>Университет: </b>{{name}}</li>
+        <li><b>Ректор: </b>{{head.0}} {{head.1}}</li>
+        <li><b>Местопложение: </b>{{adress.index}}, {{adress.city}}, {{adress.adress}}</li>
+        <li><b>Кол-во административных подразделений: </b>{{ad_amount}}</li>
+        <li><b>Кол-во научно-образовательных подразделений:  </b>{{sc_amount}}</li>
+        <li><b>Кол-во мегафакультетов:  </b>{{mf_amount}}</li>
+        <li><b>Кол-во факультетов:  </b>{{dep_amount}}</li>
+
+        <li><b>Административные подразделения: </b></li>
+        <ul>
+        {% for ad in administrative %}
+                <li><b>ID: </b>{{ ad.id }}</li>
+                <li><b>Название: </b>{{ ad.name }}</li>
+                <li><b>Заведующий факультетом: </b>
+                {{ad.head.surname}}
+                {{ad.head.name}}
+                {{ad.head.middlename}}
+                {{ad.head.table_id}}
+                </li>
+               <li><b>Работники: </b>
+                   <ol>
+                        {% for worker in ad.workers %}
+                        <li>
+                            {{worker.surname}}
+                            {{worker.name}}
+                            {{worker.middlename}}
+                            ({{worker.table_id}}, {{worker.post}})
+                        </li>
+                        {% endfor %}
+                    </ol>
+               </li>
+        {% endfor %}
+        </ul>
+
+        <li><b>Научно-образовательные подразделения: </b></li>
+        <ul>
+        {% for dep in departaments %}
+        <li><b>ID: </b>{{dep.id}}</li>
+        <li><b>Факультет: </b>{{dep.name}}</li>
+        <li><b>Заведующий факультетом: </b>
+            {{dep.head.surname}}
+            {{dep.head.name}}
+            {{dep.head.middlename}}
+            {{dep.head.table_id}}</li>
+        <li><b>Преподователи: </b>
+        <ol>
+            {% for worker in dep.workers %}
+            <li>
+                {{worker.surname}}
+                {{worker.name}}
+                {{worker.middlename}}
+                ({{worker.table_id}}, {{worker.post}})
+            </li>
+            {% endfor %}
+        </ol>
+        </li>
+        <li><b>Образовательные программы:  </b>
+        <ul>
+            {% for edp in dep.educational_programs %}
+            <li>
+                {{ edp.id }}
+                ({{ edp.name}}, {{ edp.discipline }})
+            </li>
+            {%  endfor %}
+        </ul>
+        </li>
+        {% endfor %}
+        </ul>
+    </ul>
+</section>
+</body>
+</html>

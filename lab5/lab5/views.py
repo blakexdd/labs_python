@@ -56,6 +56,9 @@ with open("json_data.json", 'r') as read_file:
     # assigning year of study
     year_of_study = data['scintific_and_educational'][0]['departments'][0]['educational_programs'][0]['year']
 
+    # assigning administrative units data to administrative variable
+    administrative = data['administrative']
+
     # assigning amount of groups
     amount_of_groups = len(year_of_study['groups'])
 
@@ -94,6 +97,13 @@ with open("json_data.json", 'r') as read_file:
     # for departaments page
     dict_deps = {'departaments': deps}
 
+    # forming dictionary of parameters to give
+    # it as third argument to render function
+    # for university structure page
+    dict_uni = {'administrative': administrative}
+    dict_uni.update(dict_deps)
+    dict_uni.update(dict_ITMO)
+
 
 # view function for making default page appearance
 def index(request):
@@ -118,3 +128,7 @@ def group(request):
 # view function for making departamen info page
 def deps(request):
     return render(request, 'departamentsInfo.html', dict_deps)
+
+# view function for making university structure page
+def ITMO_structure(request):
+    return render(request, 'universityStructure.html', dict_uni)
